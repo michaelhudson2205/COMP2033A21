@@ -10,6 +10,8 @@
 **/
 package libraries;
 
+import java.util.Objects;
+
 /**
  * 
  */
@@ -104,5 +106,35 @@ public class Book
 	{
 		this.rating = rating;
 	}
+
+	@Override
+	public String toString()
+	{
+		return "Book [title=" + title + ", author=" + author + ", genre=" + genre + ", pageCount=" + pageCount
+				+ ", publicationYear=" + publicationYear + ", edition=" + edition + ", rating=" + rating + "]";
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(author, edition, genre, pageCount, publicationYear, rating, title);
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Book other = (Book) obj;
+		return Objects.equals(author, other.author) && edition == other.edition && Objects.equals(genre, other.genre)
+				&& pageCount == other.pageCount && publicationYear == other.publicationYear
+				&& Objects.equals(rating, other.rating) && Objects.equals(title, other.title);
+	}
+	
+	
 	
 } // ==========end of class Book==========
