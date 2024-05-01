@@ -1,5 +1,7 @@
 package libraries;
 
+import java.util.ArrayList;
+
 public class DriverApp
 {
 
@@ -17,8 +19,31 @@ public class DriverApp
 		Multimedia mm4 = new Multimedia("The Godfather", "Francis Ford Coppola", "DVD", 175, 1972, 2, "R");
 		Multimedia mm5 = new Multimedia("The Shawshank Redemption", "Frank Darabont", "DVD", 142, 1994, 3, "R");
 		
-		System.out.println(bk1);
-		System.out.println(mm1);
+//		System.out.println(bk1);
+//		System.out.println(mm1);
+		
+		ArrayList<Object> libraryList = new ArrayList<Object>();
+		libraryList.add(mm5);
+		libraryList.add(mm4);
+		libraryList.add(mm3);
+		libraryList.add(mm2);
+		libraryList.add(mm1);
+		libraryList.add(bk5);
+		libraryList.add(bk4);
+		libraryList.add(bk3);
+		libraryList.add(bk2);
+		libraryList.add(bk1);
+		
+		System.out.println(libraryList.get(0));
+		System.out.println(libraryList.get(1));
+		System.out.println(libraryList.get(2));
+		System.out.println(libraryList.get(3));
+		System.out.println(libraryList.get(4));
+		System.out.println(libraryList.get(5));
+		System.out.println(libraryList.get(6));
+		System.out.println(libraryList.get(7));
+		System.out.println(libraryList.get(8));
+		System.out.println(libraryList.get(9));
 	}
 
 }
