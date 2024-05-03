@@ -15,7 +15,7 @@ import java.util.Objects;
 /**
  * 
  */
-public class Book 
+public class Book implements Comparable<Book>
 {
 	private String title;
 	private String author;
@@ -107,12 +107,6 @@ public class Book
 		this.rating = rating;
 	}
 
-	@Override
-	public String toString()
-	{
-		return "Book [title=" + title + ", author=" + author + ", genre=" + genre + ", pageCount=" + pageCount
-				+ ", publicationYear=" + publicationYear + ", edition=" + edition + ", rating=" + rating + "]";
-	}
 
 	@Override
 	public int hashCode()
@@ -135,6 +129,35 @@ public class Book
 				&& Objects.equals(rating, other.rating) && Objects.equals(title, other.title);
 	}
 	
+	/**
+	 * This is the doc for the compareTo() method in Book class.
+	 */
+	@Override
+	public int compareTo(Book o)
+	{
+		int result = 0;
+		
+		if (this.title.compareTo(o.getTitle()) < 0)
+		{
+			result = -1;
+		}
+		else if (this.title.compareTo(o.getTitle()) > 0)
+		{
+			result = 1;
+		}
+		else
+		{
+			result = this.edition - o.getEdition();
+		}
+		
+		return result;
+	}
 	
+	@Override
+	public String toString()
+	{
+		return "Book [title=" + title + ", author=" + author + ", genre=" + genre + ", pageCount=" + pageCount
+				+ ", publicationYear=" + publicationYear + ", edition=" + edition + ", rating=" + rating + "]";
+	}
 	
 } // ==========end of class Book==========
