@@ -1,5 +1,5 @@
 /**
-* File:         Assessment 2.1
+* File:         Multimedia.java
 * Description:  Project 1: Sorting Algorithms
 * Author:       Michael Hudson
 * Student ID:   110369255
@@ -15,7 +15,7 @@ import java.util.Objects;
 /**
  * 
  */
-public class Multimedia 
+public class Multimedia implements Comparable<Multimedia>
 {
 	private String title;
 	private String authorPublisher;
@@ -25,6 +25,7 @@ public class Multimedia
 	private int edition;
 	private String rating; // Assume one of: G, PG, PG-13, R
 	
+	// Constructor
 	public Multimedia(String title, String authorPublisher, String type, int duration, int publicationYear, int edition,
 			String rating) 
 	{
@@ -72,49 +73,6 @@ public class Multimedia
 		return rating;
 	}
 
-	public void setTitle(String title)
-	{
-		this.title = title;
-	}
-
-	public void setAuthorPublisher(String authorPublisher)
-	{
-		this.authorPublisher = authorPublisher;
-	}
-
-	public void setType(String type)
-	{
-		this.type = type;
-	}
-
-	public void setDuration(int duration)
-	{
-		this.duration = duration;
-	}
-
-	public void setPublicationYear(int publicationYear)
-	{
-		this.publicationYear = publicationYear;
-	}
-
-	public void setEdition(int edition)
-	{
-		this.edition = edition;
-	}
-
-	public void setRating(String rating)
-	{
-		this.rating = rating;
-	}
-
-	@Override
-	public String toString()
-	{
-		return "\nMultimedia [title=" + title + ", authorPublisher=" + authorPublisher + ", type=" + type + ", duration="
-				+ duration + ", publicationYear=" + publicationYear + ", edition=" + edition + ", rating=" + rating
-				+ "]";
-	}
-
 	@Override
 	public int hashCode()
 	{
@@ -137,8 +95,19 @@ public class Multimedia
 				&& Objects.equals(type, other.type);
 	}
 	
-	
-	
-	
+	@Override
+	public String toString()
+	{
+		return "\nMultimedia [title=" + title + ", authorPublisher=" + authorPublisher + ", type=" + type + ", duration="
+				+ duration + ", publicationYear=" + publicationYear + ", edition=" + edition + ", rating=" + rating
+				+ "]";
+	}
+
+	@Override
+	public int compareTo(Multimedia o)
+	{
+		
+		return 0;
+	}
 	
 } // ==========end of class Multimedia==========

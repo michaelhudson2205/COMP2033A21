@@ -1,5 +1,5 @@
 /**
-* File:         Assessment 2.1
+* File:         Book.java
 * Description:  Project 1: Sorting Algorithms
 * Author:       Michael Hudson
 * Student ID:   110369255
