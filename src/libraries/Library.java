@@ -12,6 +12,8 @@ package libraries;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -21,11 +23,11 @@ public class Library
 {
 	public static void main(String[] args)
 	{
-		Book bk01 = new Book("e", "F. Scott Fitzgerald", "Fiction", 180, 1925, 2, "PG-13");
-		Book bk02 = new Book("d", "Harper Lee", "Fiction", 281, 1960, 4, "PG");
-		Book bk03 = new Book("e", "J.K. Rowling", "Fantasy", 320, 1997, 1, "PG");
-		Book bk04 = new Book("1984", "George Orwell", "Dystopian", 328, 1949, 1, "R");
-		Book bk05 = new Book("Z", "Jane Austen", "Romance", 432, 1813, 3, "PG");
+		Book bk01 = new Book("e", "a", "Fiction", 1, 1925, 2, "PG");
+		Book bk02 = new Book("d", "a", "Fiction", 2, 1960, 4, "PG");
+		Book bk03 = new Book("e", "a", "Fantasy", 3, 1997, 1, "PG");
+		Book bk04 = new Book("1984", "a", "Dystopian", 4, 1949, 1, "R");
+		Book bk05 = new Book("Z", "a", "Romance", 5, 1813, 3, "PG");
 //		Book bk06 = new Book("ahort", "Jane Austen", "Romance", 432, 1813, 3, "PG");
 //		Book bk07 = new Book("ahort", "Jane Austen", "Romance", 432, 1813, 1, "PG");
 //		Book bk08 = new Book("Ahort", "Jane Austen", "Romance", 432, 1813, 2, "PG");
@@ -123,8 +125,67 @@ public class Library
 		bookBubbleSort(books);
 //		System.out.println(Arrays.toString(books));
 		
-		System.out.println("--------------------------------------------------");
-		bookBubbleSort_al(books_al);
+//		System.out.println("--------------------------------------------------");
+//		bookBubbleSort_al(books_al);
+		
+		Comparator<Book> book_sort_1 = new Comparator<Book>()
+		{
+			public int compare(Book bk1, Book bk2)
+			{
+				int result = 0;
+				
+				if (bk1.getTitle().compareTo(bk2.getTitle()) < 0)
+				{
+					result = -1;
+				}
+				else if (bk1.getTitle().compareTo(bk2.getTitle()) > 0)
+				{
+					result = 1;
+				}
+				else
+				{
+					result = bk1.getEdition() - bk2.getEdition();
+				}
+				
+				return result;
+			}
+		};
+		
+		Comparator<Book> book_sort_2 = new Comparator<Book>()
+		{
+			public int compare(Book bk1, Book bk2)
+			{
+				int result = 0;
+				
+				if (bk1.getAuthor().compareTo(bk2.getAuthor()) > 0)
+				{
+					result = -1;
+				}
+				else if (bk1.getAuthor().compareTo(bk2.getAuthor()) < 0)
+				{
+					result = 1;
+				}
+				else if (bk1.getRating().compareTo(bk2.getRating()) > 0)
+				{
+					result = -1;
+				}
+				else if (bk1.getRating().compareTo(bk2.getRating()) < 0)
+				{
+					result = 1;
+				}
+				
+				return result;
+			}
+		};
+		
+		System.out.println(">>>>>>>>>>>>>>>>>>>> using comparator book_sort_2<<<<<<<<<<<<<<<<<<<<");
+		Collections.sort(books_al, book_sort_2);
+		for (Book bk : books_al)
+		{
+			System.out.print(bk);
+		}
+		
+		
 		
 		
 	} // ==========end of psvm==========
@@ -151,6 +212,7 @@ public class Library
 	
 	public static void bookBubbleSort_al(ArrayList<Book> bookArrayList)
 	{
+		System.out.println("--------------------------------------------------");
 		System.out.println("This is the bookArrayList before the Bubble Sort");
 		System.out.println(bookArrayList);
 		for (int ii = bookArrayList.size() - 1; ii > 0; ii--)
@@ -165,7 +227,12 @@ public class Library
 				}
 			}
 		}
+		System.out.println("--------------------------------------------------");
 		System.out.println("This is the bookArrayList after the Bubble Sort");
 		System.out.println(bookArrayList);
 	}
-}
+	
+	
+	
+	
+} // ==========end of Class Library==========

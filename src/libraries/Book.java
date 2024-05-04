@@ -25,6 +25,7 @@ public class Book implements Comparable<Book>
 	private int edition;
 	private String rating; // Assume one of: G, PG, PG-13, R
 	
+	// Constructor
 	public Book(String title, String author, String genre, int pageCount, int publicationYear, int edition,
 			String rating) 
 	{
@@ -35,7 +36,7 @@ public class Book implements Comparable<Book>
 		this.publicationYear = publicationYear;
 		this.edition = edition;
 		this.rating = rating;
-	}
+	} // ==========end of Book constructor==========
 
 	public String getTitle()
 	{
@@ -71,42 +72,6 @@ public class Book implements Comparable<Book>
 	{
 		return rating;
 	}
-
-	public void setTitle(String title)
-	{
-		this.title = title;
-	}
-
-	public void setAuthor(String author)
-	{
-		this.author = author;
-	}
-
-	public void setGenre(String genre)
-	{
-		this.genre = genre;
-	}
-
-	public void setPageCount(int pageCount)
-	{
-		this.pageCount = pageCount;
-	}
-
-	public void setPublicationYear(int publicationYear)
-	{
-		this.publicationYear = publicationYear;
-	}
-
-	public void setEdition(int edition)
-	{
-		this.edition = edition;
-	}
-
-	public void setRating(String rating)
-	{
-		this.rating = rating;
-	}
-
 
 	@Override
 	public int hashCode()
@@ -156,7 +121,7 @@ public class Book implements Comparable<Book>
 	@Override
 	public String toString()
 	{
-		return "Book [title=" + title + ", author=" + author + ", genre=" + genre + ", pageCount=" + pageCount
+		return "\nBook [title=" + title + ", author=" + author + ", genre=" + genre + ", pageCount=" + pageCount
 				+ ", publicationYear=" + publicationYear + ", edition=" + edition + ", rating=" + rating + "]";
 	}
 	
