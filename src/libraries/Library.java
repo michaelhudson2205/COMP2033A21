@@ -29,7 +29,7 @@ public class Library
 		Book bk02 = new Book("d", "a", "Fiction", 2, 1960, 4, "R");
 		Book bk03 = new Book("The Big L", "a", "Fantasy", 3, 1997, 1, "PG-13");
 		Book bk04 = new Book("1984", "a", "Dystopian", 4, 1949, 1, "PG");
-		Book bk05 = new Book("Z", "a", "Romance", 5, 1813, 3, "PG");
+		Book bk05 = new Book("Z", "a", "b", 5, 1813, 3, "PG");
 		Book bk06 = new Book("ahort", "Jane Austen", "Romance", 432, 1813, 3, "PG");
 		Book bk07 = new Book("ahort", "Jane Austen", "Romance", 432, 1813, 1, "PG");
 		Book bk08 = new Book("Ahort", "Jane Austen", "Romance", 432, 1813, 2, "PG");
@@ -40,6 +40,10 @@ public class Library
 		Book bk13 = new Book("The zhort", "Jane Austen", "Romance", 432, 1813, 1, "PG");
 		Book bk14 = new Book("Zhort", "Jane Austen", "Romance", 432, 1813, 2, "PG");
 		Book bk15 = new Book("Zhort", "Jane Austen", "Romance", 432, 1813, 4, "PG");
+		Book bk16 = new Book("A", "B", "C", 1, 2, 3, "D");
+		Book bk17 = new Book("Big Bunny", "C", "D", 2, 3, 4, "E");
+		Book bk18 = new Book("Big Puppy", "F", "G", 5, 6, 7, "H");
+		Book bk19 = new Book("Big Bunyip", "I", "J", 8, 9, 10, "K");
 		
 		// Create Multimedia objects.
 		Multimedia mm01 = new Multimedia("Inception", "Christopher Nolan", "DVD", 148, 2010, 1, "PG-13");
@@ -74,6 +78,10 @@ public class Library
 		libraryList.add(mm05);
 		libraryList.add(mm06);
 		libraryList.add(mm07);
+		libraryList.add(bk16);
+		libraryList.add(bk17);
+		libraryList.add(bk18);
+		libraryList.add(bk19);
 		
 		// Create ArrayList containing only books.
 		ArrayList<Book> books_al = new ArrayList<Book>();
@@ -92,6 +100,10 @@ public class Library
 		books_al.add(bk13);
 		books_al.add(bk14);
 		books_al.add(bk15);
+		books_al.add(bk16);
+		books_al.add(bk17);
+		books_al.add(bk18);
+		books_al.add(bk19);
 		
 		// Create ArrayList containing only multimedia.
 		ArrayList<Multimedia> multimedia_al = new ArrayList<Multimedia>();
@@ -399,8 +411,8 @@ public class Library
 				System.out.print(item);
 			}
 		}
+		
+	
 	} // ==========end of SearchAll method==========
-	
-	
 	
 } // ==========end of Class Library==========
