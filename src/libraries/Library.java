@@ -24,9 +24,9 @@ public class Library
 	public static void main(String[] args)
 	{
 		Book bk01 = new Book("e", "a", "Fiction", 1, 1925, 2, "PG");
-		Book bk02 = new Book("d", "a", "Fiction", 2, 1960, 4, "PG");
+		Book bk02 = new Book("d", "a", "Fiction", 2, 1960, 4, "R");
 		Book bk03 = new Book("e", "a", "Fantasy", 3, 1997, 1, "PG");
-		Book bk04 = new Book("1984", "a", "Dystopian", 4, 1949, 1, "R");
+		Book bk04 = new Book("1984", "a", "Dystopian", 4, 1949, 1, "PG");
 		Book bk05 = new Book("Z", "a", "Romance", 5, 1813, 3, "PG");
 //		Book bk06 = new Book("ahort", "Jane Austen", "Romance", 432, 1813, 3, "PG");
 //		Book bk07 = new Book("ahort", "Jane Austen", "Romance", 432, 1813, 1, "PG");
@@ -39,25 +39,25 @@ public class Library
 //		Book bk14 = new Book("Zhort", "Jane Austen", "Romance", 432, 1813, 2, "PG");
 //		Book bk15 = new Book("Zhort", "Jane Austen", "Romance", 432, 1813, 4, "PG");
 		
-		Multimedia mm1 = new Multimedia("Inception", "Christopher Nolan", "DVD", 148, 2010, 1, "PG-13");
-		Multimedia mm2 = new Multimedia("The Dark Knight", "Christopher Nolan", "DVD", 152, 2008, 2, "PG-13");
-		Multimedia mm3 = new Multimedia("Abbey Road", "The Beatles", "CD", 47, 1969, 3, "G");
-		Multimedia mm4 = new Multimedia("The Godfather", "Francis Ford Coppola", "DVD", 175, 1972, 2, "R");
-		Multimedia mm5 = new Multimedia("The Shawshank Redemption", "Frank Darabont", "DVD", 142, 1994, 3, "R");
-		Multimedia mm6 = new Multimedia("The Great Gatsby", "F. Scott Fitzgerald", "DVD", 180, 1925, 1, "PG-13");
+		Multimedia mm01 = new Multimedia("Inception", "Christopher Nolan", "DVD", 148, 2010, 1, "PG-13");
+		Multimedia mm02 = new Multimedia("The Dark Knight", "Christopher Nolan", "DVD", 152, 2008, 2, "PG-13");
+		Multimedia mm03 = new Multimedia("Abbey Road", "The Beatles", "CD", 47, 1969, 3, "G");
+		Multimedia mm04 = new Multimedia("The Godfather", "Francis Ford Coppola", "DVD", 175, 1972, 2, "R");
+		Multimedia mm05 = new Multimedia("The Shawshank Redemption", "Frank Darabont", "DVD", 142, 1994, 3, "R");
+		Multimedia mm06 = new Multimedia("The Great Gatsby", "F. Scott Fitzgerald", "DVD", 180, 1925, 1, "PG-13");
 		
 		ArrayList<Object> libraryList = new ArrayList<Object>();
-		libraryList.add(mm5);
-		libraryList.add(mm4);
-		libraryList.add(mm3);
-		libraryList.add(mm2);
-		libraryList.add(mm1);
+		libraryList.add(mm05);
+		libraryList.add(mm04);
+		libraryList.add(mm03);
+		libraryList.add(mm02);
+		libraryList.add(mm01);
 		libraryList.add(bk05);
 		libraryList.add(bk04);
 		libraryList.add(bk03);
 		libraryList.add(bk02);
 		libraryList.add(bk01);
-		libraryList.add(mm6);
+		libraryList.add(mm06);
 		
 		Book books[] =
 			{
@@ -73,6 +73,14 @@ public class Library
 		books_al.add(bk03);
 		books_al.add(bk04);
 		books_al.add(bk05);
+		
+		ArrayList<Multimedia> multimedia_al = new ArrayList<Multimedia>();
+		multimedia_al.add(mm01);
+		multimedia_al.add(mm02);
+		multimedia_al.add(mm03);
+		multimedia_al.add(mm04);
+		multimedia_al.add(mm05);
+		multimedia_al.add(mm06);
 		
 		// Print the books
 		System.out.println("Book choices:");
@@ -128,6 +136,8 @@ public class Library
 //		System.out.println("--------------------------------------------------");
 //		bookBubbleSort_al(books_al);
 		
+		// Comparator used for **book** sorting rule 1
+		// (lexicographical ordering by Title, then by Edition).
 		Comparator<Book> book_sort_1 = new Comparator<Book>()
 		{
 			public int compare(Book bk1, Book bk2)
@@ -151,6 +161,8 @@ public class Library
 			}
 		};
 		
+		// Comparator used for **book** sorting rule 2
+		// (reverse lexicographical ordering by Author, then by Rating).
 		Comparator<Book> book_sort_2 = new Comparator<Book>()
 		{
 			public int compare(Book bk1, Book bk2)
@@ -178,6 +190,69 @@ public class Library
 			}
 		};
 		
+		// Comparator used for **multimedia** sorting rule 1
+		// (lexicographical ordering by Title, then by Edition).
+		Comparator<Multimedia> multimedia_sort_1 = new Comparator<Multimedia>()
+		{
+			public int compare(Multimedia mm1, Multimedia mm2)
+			{
+				int result = 0;
+				
+				if (mm1.getTitle().compareTo(mm2.getTitle()) < 0)
+				{
+					result = -1;
+				}
+				else if (mm1.getTitle().compareTo(mm2.getTitle()) > 0)
+				{
+					result = 1;
+				}
+				else
+				{
+					result = mm1.getEdition() - mm2.getEdition();
+				}
+				
+				return result;
+			}
+		};
+		
+		// Comparator used for **multimedia** sorting rule 2
+		// (reverse lexicographical ordering by Author/Publisher, then by Rating).
+		Comparator<Multimedia> multimedia_sort_2 = new Comparator<Multimedia>()
+		{
+			public int compare(Multimedia mm1, Multimedia mm2)
+			{
+				int result = 0;
+				
+				if (mm1.getAuthorPublisher().compareTo(mm2.getAuthorPublisher()) > 0)
+				{
+					result = -1;
+				}
+				else if (mm1.getAuthorPublisher().compareTo(mm2.getAuthorPublisher()) < 0)
+				{
+					result = 1;
+				}
+				else if (mm1.getRating().compareTo(mm2.getRating()) > 0)
+				{
+					result = -1;
+				}
+				else if (mm1.getRating().compareTo(mm2.getRating()) < 0)
+				{
+					result = 1;
+				}
+				
+				return result;
+			}
+		};
+		
+		System.out.println();
+		System.out.println(">>>>>>>>>>>>>>>>>>>> using comparator book_sort_1<<<<<<<<<<<<<<<<<<<<");
+		Collections.sort(books_al, book_sort_1);
+		for (Book bk : books_al)
+		{
+			System.out.print(bk);
+		}
+		
+		System.out.println();
 		System.out.println(">>>>>>>>>>>>>>>>>>>> using comparator book_sort_2<<<<<<<<<<<<<<<<<<<<");
 		Collections.sort(books_al, book_sort_2);
 		for (Book bk : books_al)
@@ -185,6 +260,21 @@ public class Library
 			System.out.print(bk);
 		}
 		
+		System.out.println();
+		System.out.println(">>>>>>>>>>>>>>>>>>>> using comparator multimedia_sort_1<<<<<<<<<<<<<<<<<<<<");
+		Collections.sort(multimedia_al, multimedia_sort_1);
+		for (Multimedia mm : multimedia_al)
+		{
+			System.out.print(mm);
+		}
+		
+		System.out.println();
+		System.out.println(">>>>>>>>>>>>>>>>>>>> using comparator multimedia_sort_2<<<<<<<<<<<<<<<<<<<<");
+		Collections.sort(multimedia_al, multimedia_sort_2);
+		for (Multimedia mm : multimedia_al)
+		{
+			System.out.print(mm);
+		}
 		
 		
 		
