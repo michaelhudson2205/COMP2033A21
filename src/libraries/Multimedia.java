@@ -13,19 +13,30 @@ package libraries;
 import java.util.Objects;
 
 /**
- * 
+ * Class that represents a multimedia item.
  */
 public class Multimedia implements Comparable<Multimedia>
 {
+	// Data Fields
 	private String title;
 	private String authorPublisher;
-	private String type; // Assume one of: CD, DVD, Audio, Video
-	private int duration; // Minutes
+	private String type;
+	private int duration;
 	private int publicationYear;
 	private int edition;
-	private String rating; // Assume one of: G, PG, PG-13, R
+	private String rating;
 	
-	// Constructor
+	// Methods
+	/**
+	 * Initialises a Multimedia object with all properties specified.
+	 * @param title The title, or name, of the multimedia item.
+	 * @param authorPublisher The author or publisher.
+	 * @param type The type of multimedia item (e.g. CD, DVD, Audio, Video)
+	 * @param duration The duration in minutes.
+	 * @param publicationYear The year published or released.
+	 * @param edition The edition of the item.
+	 * @param rating The applicable rating (G, PG, PG-13, R)
+	 */
 	public Multimedia(String title, String authorPublisher, String type, int duration, int publicationYear, int edition,
 			String rating) 
 	{
@@ -98,8 +109,8 @@ public class Multimedia implements Comparable<Multimedia>
 	@Override
 	public String toString()
 	{
-		return "\nMultimedia [title=" + title + ", authorPublisher=" + authorPublisher + ", type=" + type + ", duration="
-				+ duration + ", publicationYear=" + publicationYear + ", edition=" + edition + ", rating=" + rating
+		return "\nMultimedia [" + title + " by " + authorPublisher + ", " + type + ", mins: "
+				+ duration + ", Year: " + publicationYear + ", ed: " + edition + ", rating: " + rating
 				+ "]";
 	}
 

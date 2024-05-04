@@ -13,19 +13,31 @@ package libraries;
 import java.util.Objects;
 
 /**
- * 
+ * Class that represents a book.
  */
 public class Book implements Comparable<Book>
 {
+	// Data fields
 	private String title;
 	private String author;
 	private String genre;
 	private int pageCount;
 	private int publicationYear;
 	private int edition;
-	private String rating; // Assume one of: G, PG, PG-13, R
+	private String rating;
 	
-	// Constructor
+	// Methods
+	/**
+	 * Initalises a Book object with all properties specified.
+	 * 
+	 * @param title The title, or name, of the book.
+	 * @param author The author's name.
+	 * @param genre The genre that book belongs in.
+	 * @param pageCount The number of pages.
+	 * @param publicationYear The year the book was published.
+	 * @param edition The edition of the book.
+	 * @param rating The applicable rating (G, PG, PG-13, R).
+	 */
 	public Book(String title, String author, String genre, int pageCount, int publicationYear, int edition,
 			String rating) 
 	{
@@ -95,7 +107,7 @@ public class Book implements Comparable<Book>
 	}
 	
 	/**
-	 * This is the doc for the compareTo() method in Book class.
+	 * This compareTo() method is not used.
 	 */
 	@Override
 	public int compareTo(Book o)
@@ -121,8 +133,8 @@ public class Book implements Comparable<Book>
 	@Override
 	public String toString()
 	{
-		return "\nBook [title=" + title + ", author=" + author + ", genre=" + genre + ", pageCount=" + pageCount
-				+ ", publicationYear=" + publicationYear + ", edition=" + edition + ", rating=" + rating + "]";
+		return "\nBook [" + title + " by " + author + ", " + genre + ", pages: " + pageCount
+				+ ", Year: " + publicationYear + ", ed: " + edition + ", rating: " + rating + "]";
 	}
 	
 } // ==========end of class Book==========
