@@ -105,6 +105,13 @@ public class Multimedia implements Comparable<Multimedia>
 				&& Objects.equals(rating, other.rating) && Objects.equals(title, other.title)
 				&& Objects.equals(type, other.type);
 	}
+
+	@Override
+	public int compareTo(Multimedia o)
+	{
+		
+		return 0;
+	}
 	
 	@Override
 	public String toString()
@@ -114,13 +121,6 @@ public class Multimedia implements Comparable<Multimedia>
 //				+ "]";
 		return String.format("\nMultimedia  %-30s%-25s%-10s%7d%6d%5d%7s", title, authorPublisher, type, 
 				duration, publicationYear, edition, rating);
-	}
-
-	@Override
-	public int compareTo(Multimedia o)
-	{
-		
-		return 0;
 	}
 	
 } // ==========end of class Multimedia==========

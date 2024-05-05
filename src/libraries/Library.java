@@ -12,10 +12,8 @@
 package libraries;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -32,14 +30,14 @@ public class Library
 		Book bk04 = new Book("1984", "a", "Dystopian", 4, 1949, 1, "PG");
 		Book bk05 = new Book("Z", "a", "b", 5, 1813, 3, "PG");
 		Book bk06 = new Book("ahort", "Jane Austen", "Romance", 432, 1813, 3, "PG");
-		Book bk07 = new Book("ahort", "Jane Austen", "Romance", 432, 1813, 1, "PG");
+		Book bk07 = new Book("ahort", "Jane Austen", "Romance", 432, 1813, 1, "PG-13");
 		Book bk08 = new Book("Ahort", "Jane Austen", "Romance", 432, 1813, 2, "PG");
-		Book bk09 = new Book("The Ahort", "Jane Austen", "Romance", 432, 1813, 4, "PG");
+		Book bk09 = new Book("The Ahort", "Jane Austen", "Romance", 432, 1813, 4, "G");
 		Book bk10 = new Book("Pride and Prejudice", "Jane Austen", "Romance", 432, 1813, 3, "PG");
 		Book bk11 = new Book("The Pride and Prejudice", "Jane Austen", "Romance", 432, 1813, 3, "PG");
 		Book bk12 = new Book("zhort", "Jane Austen", "Romance", 432, 1813, 3, "PG");
-		Book bk13 = new Book("The zhort", "Jane Austen", "Romance", 432, 1813, 1, "PG");
-		Book bk14 = new Book("Zhort", "Jane Austen", "Romance", 432, 1813, 2, "PG");
+		Book bk13 = new Book("The zhort", "Jane Austen", "Romance", 432, 1813, 1, "G");
+		Book bk14 = new Book("Zhort", "Jane Austen", "Romance", 432, 1813, 2, "R");
 		Book bk15 = new Book("Zhort", "Jane Austen", "Romance", 432, 1813, 4, "PG");
 		Book bk16 = new Book("A", "B", "C", 1, 2, 3, "D");
 		Book bk17 = new Book("Big Bunny", "C", "D", 2, 3, 4, "E");
@@ -343,6 +341,7 @@ public class Library
 			// Get choice from user
 			choice = in.nextInt();
 		}
+		in.close();
 		System.out.println("Goodbye. Thank you for using the Library.");
 		
 	} // ==========end of psvm==========

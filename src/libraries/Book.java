@@ -107,7 +107,7 @@ public class Book implements Comparable<Book>
 	}
 	
 	/**
-	 * This compareTo() method is not used.
+	 * 
 	 */
 	@Override
 	public int compareTo(Book o)
