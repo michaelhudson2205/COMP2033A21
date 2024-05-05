@@ -18,7 +18,7 @@ class LibraryTests
 	
 	// when
 	String result = testBook1.toString();
-	String expected = "\nBook [A by B, C, pages: 1, Year: 2, ed: 3, rating: D]";
+	String expected = "\nBook        A                             B                        C               1     2    3      D";
 	
 	// then
 	assertEquals(expected, result);

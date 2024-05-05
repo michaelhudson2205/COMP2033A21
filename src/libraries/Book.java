@@ -1,6 +1,6 @@
 /**
 * File:         Book.java
-* Description:  Project 1: Sorting Algorithms
+* Description:  Project 1: Sorting Algorithms - Book Class
 * Author:       Michael Hudson
 * Student ID:   110369255
 * Email ID:     hudmy010@mymail.unisa.edu.au
@@ -133,8 +133,10 @@ public class Book implements Comparable<Book>
 	@Override
 	public String toString()
 	{
-		return "\nBook [" + title + " by " + author + ", " + genre + ", pages: " + pageCount
-				+ ", Year: " + publicationYear + ", ed: " + edition + ", rating: " + rating + "]";
+//		return "\nBook [" + title + " by " + author + ", " + genre + ", pages: " + pageCount
+//				+ ", Year: " + publicationYear + ", ed: " + edition + ", rating: " + rating + "]";
+		return String.format("\nBook        %-30s%-25s%-10s%7d%6d%5d%7s", title, author, genre, 
+				pageCount, publicationYear, edition, rating);
 	}
 	
 } // ==========end of class Book==========

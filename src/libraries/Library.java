@@ -1,6 +1,7 @@
 /**
 * File:         Library.java
 * Description:  Project 1: Sorting Algorithms
+* 				LibraryClass contains psvm and serves as driver for project.
 * Author:       Michael Hudson
 * Student ID:   110369255
 * Email ID:     hudmy010@mymail.unisa.edu.au
@@ -276,7 +277,10 @@ public class Library
 				System.out.println("You are about to run 4. Show All Lex");
 				
 				System.out.println();
-				System.out.println("\n>>>>> sorting books in lex. order by Title then Edition <<<<<");
+				System.out.println("\n>>>>> sorting books in lexicographical order by Title then Edition <<<<<");
+				System.out.printf("------------------------------------------------------------------------------------------------------%n");
+				System.out.printf("%-12s%-30s%-25s%-10s%7s%6s%5s%7s%n", "Item", "Title", "Author/Publisher", "Genre", "Pages", "Year", "Ed.", "Rating");
+				System.out.printf("------------------------------------------------------------------------------------------------------%n");
 				Collections.sort(books_al, book_sort_1);
 				for (Book bk : books_al)
 				{
@@ -284,7 +288,10 @@ public class Library
 				}
 				
 				System.out.println();
-				System.out.println("\n>>>>> sorting multimedia in lex. order by Title then Edition <<<<<");
+				System.out.println("\n>>>>> sorting multimedia in lexicographical order by Title then Edition <<<<<");
+				System.out.printf("------------------------------------------------------------------------------------------------------%n");
+				System.out.printf("%-12s%-30s%-25s%-10s%7s%6s%5s%7s%n", "Item", "Title", "Author/Publisher", "Type", "Mins", "Year", "Ed.", "Rating");
+				System.out.printf("------------------------------------------------------------------------------------------------------%n");
 				Collections.sort(multimedia_al, multimedia_sort_1);
 				for (Multimedia mm : multimedia_al)
 				{
@@ -297,6 +304,9 @@ public class Library
 				
 				System.out.println();
 				System.out.println("\n>>>>> sorting books in reverse lex. order by Author then Rating <<<<<");
+				System.out.printf("------------------------------------------------------------------------------------------------------%n");
+				System.out.printf("%-12s%-30s%-25s%-10s%7s%6s%5s%7s%n", "Item", "Title", "Author/Publisher", "Genre", "Pages", "Year", "Ed.", "Rating");
+				System.out.printf("------------------------------------------------------------------------------------------------------%n");
 				Collections.sort(books_al, book_sort_2);
 				for (Book bk : books_al)
 				{
@@ -305,6 +315,9 @@ public class Library
 				
 				System.out.println();
 				System.out.println("\n>>>>> sorting multimedia in reverse lex. order by Author then Rating <<<<<");
+				System.out.printf("------------------------------------------------------------------------------------------------------%n");
+				System.out.printf("%-12s%-30s%-25s%-10s%7s%6s%5s%7s%n", "Item", "Title", "Author/Publisher", "Type", "Mins", "Year", "Ed.", "Rating");
+				System.out.printf("------------------------------------------------------------------------------------------------------%n");
 				Collections.sort(multimedia_al, multimedia_sort_2);
 				for (Multimedia mm : multimedia_al)
 				{

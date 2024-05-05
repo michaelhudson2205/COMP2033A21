@@ -1,6 +1,6 @@
 /**
 * File:         Multimedia.java
-* Description:  Project 1: Sorting Algorithms
+* Description:  Project 1: Sorting Algorithms - Multimedia Class
 * Author:       Michael Hudson
 * Student ID:   110369255
 * Email ID:     hudmy010@mymail.unisa.edu.au
@@ -109,9 +109,11 @@ public class Multimedia implements Comparable<Multimedia>
 	@Override
 	public String toString()
 	{
-		return "\nMultimedia [" + title + " by " + authorPublisher + ", " + type + ", mins: "
-				+ duration + ", Year: " + publicationYear + ", ed: " + edition + ", rating: " + rating
-				+ "]";
+//		return "\nMultimedia [" + title + " by " + authorPublisher + ", " + type + ", mins: "
+//				+ duration + ", Year: " + publicationYear + ", ed: " + edition + ", rating: " + rating
+//				+ "]";
+		return String.format("\nMultimedia  %-30s%-25s%-10s%7d%6d%5d%7s", title, authorPublisher, type, 
+				duration, publicationYear, edition, rating);
 	}
 
 	@Override
