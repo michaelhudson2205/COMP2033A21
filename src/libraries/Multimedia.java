@@ -1,6 +1,7 @@
 /**
 * File:         Multimedia.java
 * Description:  Project 1: Sorting Algorithms - Multimedia Class
+*               Watch the video at: https://www.youtube.com/watch?v=BqXNJb3r25A
 * Author:       Michael Hudson
 * Student ID:   110369255
 * Email ID:     hudmy010@mymail.unisa.edu.au
